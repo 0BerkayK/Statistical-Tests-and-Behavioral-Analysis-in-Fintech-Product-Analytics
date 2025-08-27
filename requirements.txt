@@ -1,0 +1,13 @@
+pandas
+numpy
+matplotlib
+seaborn
+scipy
+statsmodels
+jupyter
+duckdb
+sqlalchemy
+google-cloud-bigquery
+snowflake-connector-python
+caas_jupyter_tools
+pmdarima
