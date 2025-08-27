@@ -11,7 +11,7 @@
 
 ---
 
-## Çalışma dizini (öneri)
+## Çalışma dizini
 
 ```
 fintech_product_analysis/
