@@ -1,7 +1,47 @@
 # Fintech Ürün Analitiği — İstatistiksel Analiz & Test Odaklı Proje
 
-**Kısa özet:** Bu proje Sipay benzeri bir cüzdan/ödeme ürünü senaryosunda istatistiksel analizler ve A/B testleri yapacak şekilde tasarlanmıştır. Hedef, ilanındaki teknik beceriler ve sorumlulukları (cohort, retention, A/B test, segment analizi, anomaly detection, KPI dashboard mantığı) uçtan uca simüle etmektir.
+Bu proje, Sipay benzeri bir fintech ürün veri analisti rolünü simüle etmek amacıyla hazırlanmıştır.
+Amaç, kullanıcı davranışlarını ve ürün kullanımını istatistiksel yöntemlerle analiz ederek, A/B testlerini, segment bazlı feature adoption’ı, cohort retention’ı ve anomalileri tespit etmek; sonuçları yönetim raporları şeklinde sunmaktır.
 
+Projede kullanılan veriler simüle edilmiş sentetik verilerdir, ancak gerçek dünya senaryolarına uygun olacak şekilde tasarlanmıştır.
+
+🔹 Proje Adımları
+
+01_data_cleaning.ipynb
+
+Eksik ve hatalı değerlerin kontrolü ve temizlenmesi
+
+Duplicates, outlier ve tip dönüşümleri
+
+02_cohort_retention.ipynb
+
+Kullanıcı cohort’ları oluşturma
+
+D1/D7/D30 retention hesaplamaları ve heatmap görselleştirme
+
+03_ab_test_analysis.ipynb / ab_test.py
+
+Onboarding veya feature A/B testleri
+
+Proportion z-test ile anlamlılık analizi
+
+04_segment_feature_adoption.ipynb
+
+Segment bazlı feature adoption analizi
+
+Chi-square testi
+
+05_anomaly_detection.ipynb / anomaly_alert.py
+
+KPI ve transaction verilerinde olağandışı değerlerin tespiti
+
+Z-score yöntemi ile anomaly detection ve CSV / opsiyonel alert
+
+06_summary_report.ipynb / cohort_calculator.py / weekly_insight_report.md
+
+Tüm analizlerin birleştirilmesi ve görselleştirilmesi
+
+Yönetim için okunabilir weekly insight report üretimi
 ---
 
 ## Proje amaçları
@@ -21,8 +61,14 @@ fintech_product_analysis/
 │   │   ├── users.csv
 │   │   └── transactions.csv
 │   └── cleaned/
-│       ├── users_cleaned.csv
-│       └── transactions_cleaned.csv
+│   │   ├── users_cleaned.csv
+│   │   └── transactions_cleaned.csv
+│   │   
+│   ├── ab_test_data.csv
+│   ├── anomalies_detected.csv
+│   ├── cohort_analysis.csv
+│   ├── feature_adoption.csv
+│   ├── user_segment.csv
 │
 ├── notebooks/
 │   ├── 01_data_cleaning.ipynb
@@ -35,6 +81,7 @@ fintech_product_analysis/
 ├── scripts/
 │   ├── ab_test.py
 │   ├── anomaly_alert.py
+│   ├── generate_segments_adoption.py
 │   └── cohort_calculator.py
 │
 ├── reports/
